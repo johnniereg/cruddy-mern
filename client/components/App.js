@@ -28,20 +28,31 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Add />
-        <table>
-          <thead>
-            <tr><th></th><th className='desc-col'>Date</th><th className='button-col'>Food Type</th><th className='button-col'>Amount in Grams</th><th className='button-col'>Location</th><th className='button-col'>Number of Ducks Fed</th></tr>
-          </thead>
-          <tbody>
-            {
-              this.state.data.map(function (feeding, index) {
-                return <tr key={index}><td className='counterCell'></td><td className='desc-col'>{feeding.date}</td><td className='button-col'>{feeding.foodType}</td><td className='button-col'>{feeding.foodAmountInGrams}</td><td className='button-col'>{feeding.location}</td><td className='button-col'>{feeding.numberOfDucks}</td></tr>
-              })
-            }
-          </tbody>
-        </table>
+      <div class='container'>
+
+        <div class='row add-duck-feeding-row'>
+          <div class='col text-center'>
+            <Add />
+          </div>
+        </div>
+
+        <div class='row all-duck-feedings-row'>
+          <div class='col'>
+            <table>
+              <thead>
+                <tr><th></th><th className='desc-col'>Date</th><th className='button-col'>Food Type</th><th className='button-col'>Amount in Grams</th><th className='button-col'>Location</th><th className='button-col'>Number of Ducks Fed</th></tr>
+              </thead>
+              <tbody>
+                {
+                  this.state.data.map(function (feeding, index) {
+                    return <tr key={index}><td className='counterCell'></td><td className='desc-col'>{feeding.date}</td><td className='button-col'>{feeding.foodType}</td><td className='button-col'>{feeding.foodAmountInGrams}</td><td className='button-col'>{feeding.location}</td><td className='button-col'>{feeding.numberOfDucks}</td></tr>
+                  })
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     );
   }

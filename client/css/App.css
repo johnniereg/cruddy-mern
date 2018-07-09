@@ -2,18 +2,38 @@ body {
   padding: 50px;
 }
 
+label {
+  display:inline-block;
+  width:200px;
+  margin-right:30px;
+  text-align:right;
+}
+
+fieldset {
+  border:none;
+  margin:0px auto;
+}
+
+table {
+  counter-reset: tableCount;
+}
+
+.all-duck-feedings-row {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.button-center {
+  text-align: center;
+}
+
 .button-col {
   width:200px;
   text-align:center;
 }
 
-.desc-col {
-  width:300px;
-  text-align:left;
-}
-
-table {
-  counter-reset: tableCount;
+.closebtn{
+  float:right;
 }
 
 .counterCell:before {
@@ -26,10 +46,16 @@ table {
   width:50px;
 }
 
-.button-center {
-  text-align: center;
-
+.desc-col {
+  width:300px;
+  text-align:left;
 }
+
+.duck-feeding-row {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .Modal {
   position: relative;
   top: 250px;
@@ -50,24 +76,4 @@ table {
   right: 0;
   bottom: 0;
   background-color: rebeccapurple;
-}
-
-.button-center {
-  text-align: center;
-}
-
-label{
-  display:inline-block;
-  width:200px;
-  margin-right:30px;
-  text-align:right;
-}
-
-fieldset{
-  border:none;
-  margin:0px auto;
-}
-
-.closebtn{
-  float:right;
 }
