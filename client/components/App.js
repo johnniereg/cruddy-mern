@@ -55,9 +55,7 @@ export default class App extends React.Component {
                     <div className='col'>{feeding.location}</div>
                     <div className='col'>{feeding.numberOfDucks}</div>
                   </div>
-
                 )
-              
               })
             }
           </div>

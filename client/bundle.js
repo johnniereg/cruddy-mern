@@ -34727,7 +34727,7 @@ var Add = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactBootstrap.Button,
-                        { bsStyle: 'success', bsSize: 'small', onClick: this.openModal },
+                        { bsStyle: 'success', bsSize: 'large', onClick: this.openModal },
                         _react2.default.createElement('span', { className: 'glyphicon glyphicon-plus' }),
                         'Add New Feeding'
                     ),
@@ -34760,7 +34760,7 @@ var Add = function (_React$Component) {
                                 { htmlFor: 'date' },
                                 'Date:'
                             ),
-                            _react2.default.createElement('input', { type: 'text', id: 'date', name: 'date', value: this.state.date, onChange: this.handleTextChange }),
+                            _react2.default.createElement('input', { type: 'date', id: 'date', name: 'date', value: this.state.date, onChange: this.handleTextChange }),
                             _react2.default.createElement(
                                 'label',
                                 { htmlFor: 'foodType' },
@@ -34813,7 +34813,7 @@ var Add = function (_React$Component) {
                             isOpen: this.state.modalIsOpen,
                             onAfterOpen: this.afterOpenModal,
                             onRequestClose: this.closeModal,
-                            contentLabel: 'Add Expense',
+                            contentLabel: 'Add Feeding',
                             className: 'Modal' },
                         _react2.default.createElement(
                             'div',
@@ -34829,7 +34829,7 @@ var Add = function (_React$Component) {
                                 _react2.default.createElement(
                                     _reactBootstrap.Button,
                                     { bsStyle: 'success', bsSize: 'xsmall', onClick: this.closeModal },
-                                    'Close the Dialog'
+                                    'Back to Feedings'
                                 )
                             )
                         )

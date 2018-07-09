@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 var querystring = require('querystring');
 
+
 class Add extends React.Component {
     constructor() {
         super();
@@ -125,21 +126,22 @@ class Add extends React.Component {
         if (this.state.messageFromServer == '') {
             return (
                 <div>
-                    <Button bsStyle="success" bsSize="small" onClick={this.openModal}><span className="glyphicon glyphicon-plus"></span>Add New Feeding</Button>
+                    <Button bsStyle="success" bsSize="large" onClick={this.openModal}><span className="glyphicon glyphicon-plus"></span>Add New Feeding</Button>
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         onRequestClose={this.closeModal}
                         contentLabel="Add Feeding"
                         className="Modal">
 
+                        {/* Close Modal Button */}
                         <Link to={{ pathname: '/', search: '' }} style={{ textDecoration: 'none' }}>
                             <Button bsStyle="danger" bsSize="xsmall" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove">x</span></Button>
                         </Link><br />
 
-                        {/* @TODO UPDATE THE FIELDS */}
+                        {/* Form Inputs for Feeding Entries */}
                         <fieldset>
                             
-                            <label htmlFor="date">Date:</label><input type="text" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
+                            <label htmlFor="date">Date:</label><input type="date" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
 
                             <label htmlFor="foodType">Food Type:</label><input type="text" id="foodType" name="foodType" value={this.state.foodType} onChange={this.handleTextChange}></input>
 
@@ -151,10 +153,12 @@ class Add extends React.Component {
 
                         </fieldset>
 
+                        {/* Submit */}
                         <div className='button-center'>
                             <br />
                             <Button bsStyle="success" bsSize="small" onClick={this.onClick}>Add New Feeding</Button>
                         </div>
+
                     </Modal>
                 </div>
             )
@@ -167,12 +171,12 @@ class Add extends React.Component {
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
-                        contentLabel="Add Expense"
+                        contentLabel="Add Feeding"
                         className="Modal">
                         <div className='button-center'>
                             <h3>{this.state.messageFromServer}</h3>
                             <Link to={{ pathname: '/', search: '' }} style={{ textDecoration: 'none' }}>
-                                <Button bsStyle="success" bsSize="xsmall" onClick={this.closeModal}>Close the Dialog</Button>
+                                <Button bsStyle="success" bsSize="xsmall" onClick={this.closeModal}>Back to Feedings</Button>
                             </Link>
                         </div>
                     </Modal>

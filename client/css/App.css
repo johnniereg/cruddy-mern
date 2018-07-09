@@ -45,12 +45,12 @@ fieldset {
 
 .Modal {
   position: relative;
-  top: 250px;
-  left: 400px;
-  right: 20px;
-  bottom: 20px;
+  top: 25%;
+  left: 25%;
+  right: auto;
+  bottom: auto;
   background-color: #F5F5F5;
-  width:500px;
+  width: 50%;
   border: 1px solid #000;
   border-radius: 4px;
   padding: 20px;
