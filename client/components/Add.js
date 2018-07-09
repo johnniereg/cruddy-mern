@@ -44,6 +44,10 @@ class Add extends React.Component {
         });
     }
 
+    componentWillMount() {
+        Modal.setAppElement('body');
+    }
+
     componentDidMount() {
         this.setState({
             month: this.props.selectedMonth
@@ -129,21 +133,21 @@ class Add extends React.Component {
                         className="Modal">
 
                         <Link to={{ pathname: '/', search: '' }} style={{ textDecoration: 'none' }}>
-                            <Button bsStyle="danger" bsSize="mini" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove">x</span></Button>
+                            <Button bsStyle="danger" bsSize="xsmall" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove">x</span></Button>
                         </Link><br />
 
                         {/* @TODO UPDATE THE FIELDS */}
                         <fieldset>
                             
-                            <label for="date">Date:</label><input type="text" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
+                            <label htmlFor="date">Date:</label><input type="text" id="date" name="date" value={this.state.date} onChange={this.handleTextChange}></input>
 
-                            <label for="foodType">Food Type:</label><input type="text" id="foodType" name="foodType" value={this.state.foodType} onChange={this.handleTextChange}></input>
+                            <label htmlFor="foodType">Food Type:</label><input type="text" id="foodType" name="foodType" value={this.state.foodType} onChange={this.handleTextChange}></input>
 
-                            <label for="foodAmountInGrams">Food Amount In Grams:</label><input type="number" id="foodAmountInGrams" name="foodAmountInGrams" value={this.state.foodAmountInGrams} onChange={this.handleTextChange}></input>
+                            <label htmlFor="foodAmountInGrams">Food Amount In Grams:</label><input type="number" id="foodAmountInGrams" name="foodAmountInGrams" value={this.state.foodAmountInGrams} onChange={this.handleTextChange}></input>
 
-                            <label for="location">Feeding Location:</label><input type="text" id="location" name="location" value={this.state.location} onChange={this.handleTextChange}></input>
+                            <label htmlFor="location">Feeding Location:</label><input type="text" id="location" name="location" value={this.state.location} onChange={this.handleTextChange}></input>
 
-                            <label for="numberOfDucks">Number of Ducks Fed:</label><input type="number" id="numberOfDucks" name="numberOfDucks" value={this.state.numberOfDucks} onChange={this.handleTextChange}></input>
+                            <label htmlFor="numberOfDucks">Number of Ducks Fed:</label><input type="number" id="numberOfDucks" name="numberOfDucks" value={this.state.numberOfDucks} onChange={this.handleTextChange}></input>
 
                         </fieldset>
 
@@ -168,7 +172,7 @@ class Add extends React.Component {
                         <div className='button-center'>
                             <h3>{this.state.messageFromServer}</h3>
                             <Link to={{ pathname: '/', search: '' }} style={{ textDecoration: 'none' }}>
-                                <Button bsStyle="success" bsSize="mini" onClick={this.closeModal}>Close the Dialog</Button>
+                                <Button bsStyle="success" bsSize="xsmall" onClick={this.closeModal}>Close the Dialog</Button>
                             </Link>
                         </div>
                     </Modal>

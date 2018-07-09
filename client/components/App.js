@@ -1,8 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
+
 import Add from './Add'
+
 export default class App extends React.Component {
+
   constructor() {
     super();
     this.state = { data: [] };
@@ -27,15 +29,15 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Add selectedMonth={this.state.selectedMonth} selectedYear={this.state.selectedYear} />
+        <Add />
         <table>
           <thead>
             <tr><th></th><th className='desc-col'>Date</th><th className='button-col'>Food Type</th><th className='button-col'>Amount in Grams</th><th className='button-col'>Location</th><th className='button-col'>Number of Ducks Fed</th></tr>
           </thead>
           <tbody>
             {
-              this.state.data.map(function (exp) {
-                return <tr><td className='counterCell'></td><td className='desc-col'>{exp.date}</td><td className='button-col'>{exp.foodType}</td><td className='button-col'>{exp.foodAmountInGrams}</td><td className='button-col'>{exp.location}</td><td className='button-col'>{exp.numberOfDucks}</td></tr>
+              this.state.data.map(function (feeding, index) {
+                return <tr key={index}><td className='counterCell'></td><td className='desc-col'>{feeding.date}</td><td className='button-col'>{feeding.foodType}</td><td className='button-col'>{feeding.foodAmountInGrams}</td><td className='button-col'>{feeding.location}</td><td className='button-col'>{feeding.numberOfDucks}</td></tr>
               })
             }
           </tbody>
