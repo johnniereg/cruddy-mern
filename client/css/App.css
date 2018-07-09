@@ -3,19 +3,15 @@ body {
 }
 
 label {
-  display:inline-block;
-  width:200px;
-  margin-right:30px;
-  text-align:right;
+  display: inline-block;
+  width: 200px;
+  margin-right: 30px;
+  text-align: right;
 }
 
 fieldset {
-  border:none;
-  margin:0px auto;
-}
-
-table {
-  counter-reset: tableCount;
+  border: none;
+  margin: 0px auto;
 }
 
 .add-duck-feeding-row {
@@ -31,28 +27,8 @@ table {
   text-align: center;
 }
 
-.button-col {
-  width:200px;
-  text-align:center;
-}
-
-.closebtn{
-  float:right;
-}
-
-.counterCell:before {
-  content: counter(tableCount);
-  counter-increment: tableCount;
-}
-
-.counterCell {
-  text-align: center;
-  width:50px;
-}
-
-.desc-col {
-  width:300px;
-  text-align:left;
+.closebtn {
+  float: right;
 }
 
 .duck-app-banner {
