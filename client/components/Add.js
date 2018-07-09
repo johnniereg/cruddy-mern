@@ -37,10 +37,6 @@ class Add extends React.Component {
     closeModal() {
         this.setState({
             modalIsOpen: false,
-            description: '',
-            amount: '',
-            month: 'Jan',
-            year: 2016,
             messageFromServer: ''
         });
     }

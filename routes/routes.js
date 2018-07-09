@@ -5,7 +5,7 @@ var router = express.Router();
 
 var Feeding = require('../models/Feeding.js');
 
-
+// Homepage load
 router.get('/', function (req, res) {
     res.render('index')
 });
