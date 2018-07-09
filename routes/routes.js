@@ -19,7 +19,7 @@ router.route('/insert')
         feeding.foodType = req.body.foodType;
         feeding.foodAmountInGrams = req.body.foodAmountInGrams;
         feeding.location = req.body.location;
-        feed.numberOfDucks = req.body.numberOfDucks;
+        feeding.numberOfDucks = req.body.numberOfDucks;
         
         feeding.save(function (err) {
             if (err)
@@ -55,21 +55,12 @@ router.get('/delete', function (req, res) {
 });
 
 router.get('/getAll', function (req, res) {
-    var monthRec = req.query.month;
-    var yearRec = req.query.year;
-    if (monthRec && monthRec != 'All') {
-        Feeding.find({ $and: [{ month: monthRec }, { year: yearRec }] }, function (err, feedings) {
-            if (err)
-                res.send(err);
-            res.json(feedings);
-        });
-    } else {
-        Feeding.find({ year: yearRec }, function (err, feedings) {
-            if (err)
-                res.send(err);
-            res.json(feedings);
-        });
-    }
+    Feeding.find(function (err, feedings) {
+        if (err)
+            res.send(err);
+        console.log(feedings);
+        res.json(feedings);
+    });
 });
 
 module.exports = router;
