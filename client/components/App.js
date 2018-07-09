@@ -8,18 +8,19 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = { data: [] };
-    this.getData = this.getData.bind(this);
+    this.getFeedings = this.getFeedings.bind(this);
   }
 
   componentDidMount() {
-    this.getData(this);
+    this.getFeedings(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.getData(this);
+    this.getFeedings(this);
   }
 
-  getData(ev) {
+  // Display all entries in the feeding collection
+  getFeedings(ev) {
     axios.get('/feedings')
       .then(function (response) {
         ev.setState({ data: response.data });
@@ -38,6 +39,7 @@ export default class App extends React.Component {
 
         <div className='row all-duck-feedings-row'>
           <div className='col'>
+          
             <div className='row'>
               <div className='col'><h5>Date</h5></div>
               <div className='col'><h5>Food Type</h5></div>
@@ -46,6 +48,7 @@ export default class App extends React.Component {
               <div className='col'><h5>Ducks Fed</h5></div>
             </div>
             {
+              // Render a row of data for each feeding entry
               this.state.data.map(function (feeding, index) {
                 return (
                   <div className='row duck-feeding-entry' key={index}>

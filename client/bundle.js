@@ -33536,23 +33536,26 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
 
     _this.state = { data: [] };
-    _this.getData = _this.getData.bind(_this);
+    _this.getFeedings = _this.getFeedings.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getData(this);
+      this.getFeedings(this);
     }
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      this.getData(this);
+      this.getFeedings(this);
     }
+
+    // Display all entries in the feeding collection
+
   }, {
-    key: 'getData',
-    value: function getData(ev) {
+    key: 'getFeedings',
+    value: function getFeedings(ev) {
       _axios2.default.get('/feedings').then(function (response) {
         ev.setState({ data: response.data });
       });
@@ -33627,6 +33630,8 @@ var App = function (_React$Component) {
                 )
               )
             ),
+
+            // Render a row of data for each feeding entry
             this.state.data.map(function (feeding, index) {
               return _react2.default.createElement(
                 'div',
@@ -34629,10 +34634,6 @@ var Add = function (_React$Component) {
         value: function closeModal() {
             this.setState({
                 modalIsOpen: false,
-                description: '',
-                amount: '',
-                month: 'Jan',
-                year: 2016,
                 messageFromServer: ''
             });
         }
