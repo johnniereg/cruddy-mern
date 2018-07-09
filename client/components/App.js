@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import Add from './Add'
+import Add from './Add.js'
 
 export default class App extends React.Component {
 
@@ -20,10 +20,10 @@ export default class App extends React.Component {
   }
 
   // Display all entries in the feeding collection
-  getFeedings(ev) {
+  getFeedings(target) {
     axios.get('/feedings')
       .then(function (response) {
-        ev.setState({ data: response.data });
+        target.setState({ data: response.data });
       });
   }
 
