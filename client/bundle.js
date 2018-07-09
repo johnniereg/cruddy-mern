@@ -33562,96 +33562,102 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { 'class': 'container' },
+        { className: 'container' },
         _react2.default.createElement(
           'div',
-          { 'class': 'row' },
+          { className: 'row add-duck-feeding-row' },
           _react2.default.createElement(
             'div',
-            { 'class': 'col text-center' },
+            { className: 'col text-center' },
             _react2.default.createElement(_Add2.default, null)
           )
         ),
         _react2.default.createElement(
           'div',
-          { 'class': 'row' },
+          { className: 'row all-duck-feedings-row' },
           _react2.default.createElement(
             'div',
-            { 'class': 'col' },
+            { className: 'col' },
             _react2.default.createElement(
-              'table',
-              null,
+              'div',
+              { className: 'row' },
               _react2.default.createElement(
-                'thead',
-                null,
+                'div',
+                { className: 'col' },
                 _react2.default.createElement(
-                  'tr',
+                  'h5',
                   null,
-                  _react2.default.createElement('th', null),
-                  _react2.default.createElement(
-                    'th',
-                    { className: 'desc-col' },
-                    'Date'
-                  ),
-                  _react2.default.createElement(
-                    'th',
-                    { className: 'button-col' },
-                    'Food Type'
-                  ),
-                  _react2.default.createElement(
-                    'th',
-                    { className: 'button-col' },
-                    'Amount in Grams'
-                  ),
-                  _react2.default.createElement(
-                    'th',
-                    { className: 'button-col' },
-                    'Location'
-                  ),
-                  _react2.default.createElement(
-                    'th',
-                    { className: 'button-col' },
-                    'Number of Ducks Fed'
-                  )
+                  'Date'
                 )
               ),
               _react2.default.createElement(
-                'tbody',
-                null,
-                this.state.data.map(function (feeding, index) {
-                  return _react2.default.createElement(
-                    'tr',
-                    { key: index },
-                    _react2.default.createElement('td', { className: 'counterCell' }),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'desc-col' },
-                      feeding.date
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'button-col' },
-                      feeding.foodType
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'button-col' },
-                      feeding.foodAmountInGrams
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'button-col' },
-                      feeding.location
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'button-col' },
-                      feeding.numberOfDucks
-                    )
-                  );
-                })
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'h5',
+                  null,
+                  'Food Type'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'h5',
+                  null,
+                  'Amount in Grams'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'h5',
+                  null,
+                  'Location'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col' },
+                _react2.default.createElement(
+                  'h5',
+                  null,
+                  'Ducks Fed'
+                )
               )
-            )
+            ),
+            this.state.data.map(function (feeding, index) {
+              return _react2.default.createElement(
+                'div',
+                { className: 'row duck-feeding-entry', key: index },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'col' },
+                  feeding.date
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'col' },
+                  feeding.foodType
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'col' },
+                  feeding.foodAmountInGrams
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'col' },
+                  feeding.location
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'col' },
+                  feeding.numberOfDucks
+                )
+              );
+            })
           )
         )
       );

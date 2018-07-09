@@ -28,17 +28,17 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div class='container'>
+      <div className='container'>
 
-        <div class='row add-duck-feeding-row'>
-          <div class='col text-center'>
+        <div className='row add-duck-feeding-row'>
+          <div className='col text-center'>
             <Add />
           </div>
         </div>
 
-        <div class='row all-duck-feedings-row'>
-          <div class='col'>
-            <table>
+        <div className='row all-duck-feedings-row'>
+          <div className='col'>
+            {/* <table>
               <thead>
                 <tr><th></th><th className='desc-col'>Date</th><th className='button-col'>Food Type</th><th className='button-col'>Amount in Grams</th><th className='button-col'>Location</th><th className='button-col'>Number of Ducks Fed</th></tr>
               </thead>
@@ -49,7 +49,29 @@ export default class App extends React.Component {
                   })
                 }
               </tbody>
-            </table>
+            </table> */}
+            <div className='row'>
+              <div className='col'><h5>Date</h5></div>
+              <div className='col'><h5>Food Type</h5></div>
+              <div className='col'><h5>Amount in Grams</h5></div>
+              <div className='col'><h5>Location</h5></div>
+              <div className='col'><h5>Ducks Fed</h5></div>
+            </div>
+            {
+              this.state.data.map(function (feeding, index) {
+                return (
+                  <div className='row duck-feeding-entry' key={index}>
+                    <div className='col'>{feeding.date}</div>
+                    <div className='col'>{feeding.foodType}</div>
+                    <div className='col'>{feeding.foodAmountInGrams}</div>
+                    <div className='col'>{feeding.location}</div>
+                    <div className='col'>{feeding.numberOfDucks}</div>
+                  </div>
+
+                )
+              
+              })
+            }
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding-bottom: 50px;
 }
 
 label {
@@ -18,8 +18,12 @@ table {
   counter-reset: tableCount;
 }
 
-.all-duck-feedings-row {
+.add-duck-feeding-row {
   padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.all-duck-feedings-row {
   padding-bottom: 50px;
 }
 
@@ -51,9 +55,16 @@ table {
   text-align:left;
 }
 
-.duck-feeding-row {
-  padding-top: 50px;
-  padding-bottom: 50px;
+.duck-app-banner {
+  margin-top: 50px;
+}
+
+.duck-feeding-entry {
+  margin-bottom: 10px;
+}
+
+.duck-photo {
+  max-width: 150px;
 }
 
 .Modal {
