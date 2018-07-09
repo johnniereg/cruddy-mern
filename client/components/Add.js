@@ -75,7 +75,7 @@ class Add extends React.Component {
     }
 
     insertNewFeeding(e) {
-        axios.post('/insert',
+        axios.post('/feeding',
             querystring.stringify({
                 date: e.state.date,
                 foodType: e.state.foodType,

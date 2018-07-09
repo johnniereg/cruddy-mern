@@ -33553,7 +33553,7 @@ var App = function (_React$Component) {
   }, {
     key: 'getData',
     value: function getData(ev) {
-      _axios2.default.get('/getAll').then(function (response) {
+      _axios2.default.get('/feedings').then(function (response) {
         ev.setState({ data: response.data });
       });
     }
@@ -34673,7 +34673,7 @@ var Add = function (_React$Component) {
     }, {
         key: 'insertNewFeeding',
         value: function insertNewFeeding(e) {
-            _axios2.default.post('/insert', querystring.stringify({
+            _axios2.default.post('/feeding', querystring.stringify({
                 date: e.state.date,
                 foodType: e.state.foodType,
                 foodAmountInGrams: e.state.foodAmountInGrams,

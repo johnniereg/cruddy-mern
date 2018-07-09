@@ -10,9 +10,17 @@ router.get('/', function (req, res) {
     res.render('index')
 });
 
-// @TODO redo routes in a more RESTful way
+// Get all feedings
+router.get('/feedings', function (req, res) {
+    Feeding.find(function (err, feedings) {
+        if (err)
+            res.send(err);
+        res.json(feedings);
+    });
+});
 
-router.route('/insert')
+// Create new feeding entry
+router.route('/feeding')
     .post(function (req, res) {
         var feeding = new Feeding();
         feeding.date = req.body.date;
@@ -27,40 +35,5 @@ router.route('/insert')
             res.send('Feeding successfully added!');
         });
     });
-
-router.route('/feeding')
-    .post(function (req, res) {
-        const doc = {
-            date: req.body.date,
-            foodType: req.body.foodType,
-            foodAmountInGrams: req.body.foodAmountInGrams,
-            location: req.body.location,
-            numberOfDucks: req.body.numberOfDucks
-        };
-        console.log(doc);
-        Feeding.update({ _id: req.body._id }, doc, function (err, result) {
-            if (err)
-                res.send(err);
-            res.send('Feeding successfully updated!');
-        });
-    });
-
-router.get('/delete', function (req, res) {
-    var id = req.query.id;
-    Feeding.find({ _id: id }).remove().exec(function (err, expense) {
-        if (err)
-            res.send(err)
-        res.send('Feeding successfully deleted!');
-    })
-});
-
-router.get('/getAll', function (req, res) {
-    Feeding.find(function (err, feedings) {
-        if (err)
-            res.send(err);
-        console.log(feedings);
-        res.json(feedings);
-    });
-});
 
 module.exports = router;
