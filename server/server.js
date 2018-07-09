@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
 
+require('dotenv').config();
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../client'));
 app.use(express.static(path.join(__dirname, '../client')));
