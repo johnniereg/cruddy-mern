@@ -44,13 +44,12 @@ fieldset {
 }
 
 .Modal {
-  position: relative;
-  top: 25%;
-  left: 25%;
-  right: auto;
-  bottom: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
   background-color: #F5F5F5;
-  width: 50%;
+  max-width: 500px;
   border: 1px solid #000;
   border-radius: 4px;
   padding: 20px;
